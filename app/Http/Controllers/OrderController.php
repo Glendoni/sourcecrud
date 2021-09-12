@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Validator;
 class OrderController extends Controller
 {
     /**
-     * Display a listing of the resource and claffyed.
+     * Display a listing of the resource and claffcheck.
      *
      * @return \Illuminate\Http\Response
      * @todo  Replace $user_id with auth::id() when using auth middleware
