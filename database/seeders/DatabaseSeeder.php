@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
          Customer::factory(1)->create();
          Product::factory(3)->create();
          Order::factory(1)->create();
-         OrderItem::factory(1)->create();
+   return      OrderItem::factory(1)->create();
 
     }
 }

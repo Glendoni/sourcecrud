@@ -13,8 +13,13 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+
+Route::get('/tests', function () {
+    return ['Hello world'];
+});
 Route::resource('products', 'App\Http\Controllers\ProductController');
-Route::resource('orders', 'App\Http\Controllers\OrderController');
+Route::resource('/orders', 'App\Http\Controllers\OrderController');
 Route::resource('orderitems', 'App\Http\Controllers\OrderItemController');
 Route::resource('projects', 'App\Http\Controllers\ProjectController');
 

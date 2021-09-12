@@ -21,9 +21,11 @@ class OrderController extends Controller
      */
     public function index()
     {
+
+       // return ['Hello world'];
         try {
             $user_id = 1; // Replace with user auth id when using auth middleware
-            $orders = Order::JoinOrderItems()
+            $orders =   Order::JoinOrderItems()
                 ->JoinProducts()
                 ->select('name', 'ot.price', 'products.name', 'description', 'type', 'ot.id',
                     DB::raw('(CASE
@@ -35,8 +37,8 @@ class OrderController extends Controller
                 ->whereNotNull('ot.id')
                 ->where('customer_id', $user_id)
                 ->get();
-            $order = $orders;
-            $ord['cost'] = [number_format($order->sum('price'), 2, ',', ' ')];
+
+            $ord['cost'] = [number_format($orders->sum('price'), 2, ',', ' ')];
             $ord['data'] = $orders;
             return [$ord];
         } catch (\Exception $e) {

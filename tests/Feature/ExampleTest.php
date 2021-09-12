@@ -2,11 +2,17 @@
 
 namespace Tests\Feature;
 
+use App\Models\Customer;
+use App\Models\Order;
+use App\Models\Product;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Http\Request;
 use Tests\TestCase;
 
 class ExampleTest extends TestCase
 {
+    use WithoutMiddleware, RefreshDatabase;
     /**
      * A basic test example.
      *
@@ -14,8 +20,16 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $response = $this->get('/');
+     $order =   $this->seed('DatabaseSeeder');
+        $response = $this->get('/api/orders');
 
-        $response->assertStatus(200);
+        $response->assertJsonStructure([
+          [  'cost' => [],
+                'data' => []
+          ]
+        ]);
+
+
+      $response->assertSeeText( 'Connectivity');
     }
 }

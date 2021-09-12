@@ -18,7 +18,7 @@ class ProductFactory extends Factory
     /**
      * Define the model's default state.
      *
-     * @return array
+     * @return arrayy
      */
     public function definition()
     {
