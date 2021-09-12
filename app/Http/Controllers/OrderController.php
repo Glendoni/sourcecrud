@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Validator;
 class OrderController extends Controller
 {
     /**
-     * Display a listing of the resource and claffcheckGlenCowDelete.
+     * Display a listing of the resource and claffcheckDeleteAmend.
      *
      * @return \Illuminate\Http\Response
      * @todo  Replace $user_id with auth::id() when using auth middleware
